@@ -49,6 +49,7 @@ async def get_todo_by_id(title):
 @app.post("/api/todo", response_model=models.Todo)
 async def post_todo(todo: models.Todo):
     response = await create_todo(todo.dict())
+    print(response)
     if response:
         return response
     else:
